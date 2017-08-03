@@ -1,0 +1,6 @@
+&inputpp 
+   outdir = '/home/ocean/qe-6.1/work/Graphene/'
+   prefix = 'graphene'
+   seedname = 'Graphene'
+   write_unk = .true.
+/
