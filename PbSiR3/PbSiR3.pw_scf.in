@@ -1,0 +1,65 @@
+&control
+  calculation = 'scf'
+  prefix='PbSi',
+
+  pseudo_dir = '/home/ocean/qe-6.1/pseudo/',
+  outdir='/home/ocean/qe-6.1/work/PbSiR3/'
+  wf_collect=.true.
+/
+
+&system
+  ibrav=  4, 
+  celldm(1) =12.45395657,
+  celldm(3) = 7.071067812,
+  
+  nat = 22, 
+  ntyp = 2,
+
+  ecutwfc =50,
+  ecutrho = 250,
+
+
+  noncolin = .true.,
+  lspinorb = .true.,
+
+  occupations = 'smearing',
+  degauss = 0.01,
+/
+
+&electrons
+  mixing_beta = 0.7
+  conv_thr =  1.0d-8
+/
+
+ATOMIC_SPECIES
+  Si  28.086  Si.pbe-n-kjpaw_psl.0.1.UPF
+  Pb  207.2   Pb.rel-pbe-dn-kjpaw_psl.0.2.2.UPF
+  
+
+ATOMIC_POSITIONS {angstrom}
+
+Pb    1.098392    1.902470    -0.64000
+Si    0.000000    0.000000    0.000000
+Si    0.000000    0.000000    9.320166
+Si    2.196784    0.000000    6.213444
+Si    5.491960    1.902471    6.213444
+Si    2.196784    3.804942    6.213444
+Si    2.196784    3.804942    3.883402
+Si    0.000000    0.000000    6.990124
+Si    2.196784    0.000000    3.883402
+Si    5.491960    1.902471    3.883402
+Si   -0.000000    3.804941    0.000000
+Si   -0.000000    3.804941    9.320166
+Si    4.393568    0.000000    0.776680
+Si    1.098392    1.902471    0.776681
+Si    4.393568    3.804942    0.776680
+Si    3.295177    1.902471    0.000000
+Si    3.295177    1.902471    9.320166
+Si    4.393568    3.804942    3.106722
+Si    1.098392    1.902471    3.106722
+Si    4.393568    0.000000    3.106722
+Si    3.295176    1.902472    6.990124
+Si    0.000000    3.804942    6.990124
+
+K_POINTS {automatic}
+  11 11 5 0 0 0
